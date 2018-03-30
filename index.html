@@ -11,22 +11,22 @@
 <body>
   <header>
     <nav>
-      <h1><a href="/">Restaurant Reviews</a></h1>
+      <h1><a href="/" alt="Restaurant Reviews">Restaurant Reviews</a></h1>
     </nav>
-    <a href="#skip-map" class="skip-map">Skip Google Map</a>
+    <a href="#skip-map" class="skip-map" alt="Skip Google Map">Skip Google Map</a>
   </header>
 
   <main id="maincontent">
-    <section id="map-container">
+    <section id="map-container" title="Google Maps" role="application">
       <div id="map"></div>
     </section>
     <section id="skip-map" tabindex="-1">
       <div class="filter-options">
         <h2>Filter Results</h2>
-        <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
+        <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()" aria-label="Select Neighborhoods">
           <option value="all">All Neighborhoods</option>
         </select>
-        <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
+        <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()" aria-label="Select Cuisines">
           <option value="all">All Cuisines</option>
         </select>
       </div>
@@ -40,7 +40,7 @@
 
 
   <footer id="footer">
-    Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
+    Copyright (c) 2017 <a href="/" alt="Restaurant Reviews"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
   </footer>
 
 </body>

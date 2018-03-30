@@ -2,15 +2,6 @@ let restaurant;
 var map;
 
 /**
- * Skip focus on map
- */
-const skipMap = document.querySelector('.skip-map');
-const name = document.getElementById('restaurant-name');
-skipMap.addEventListener('click', function(){
-  name.focus();
-});
-
-/**
  * Initialize Google map, called from HTML.
  */
 window.initMap = () => {
