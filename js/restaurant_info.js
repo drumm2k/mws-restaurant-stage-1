@@ -2,6 +2,15 @@ let restaurant;
 var map;
 
 /**
+ * Skip focus on map
+ */
+const skipMap = document.querySelector('.skip-map');
+const name = document.getElementById('restaurant-name');
+skipMap.addEventListener('click', function(){
+  name.focus();
+});
+
+/**
  * Initialize Google map, called from HTML.
  */
 window.initMap = () => {
@@ -58,6 +67,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   const image = document.getElementById('restaurant-img');
   image.className = 'restaurant-img'
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.alt = restaurant.name + " Restaurant";
 
   const cuisine = document.getElementById('restaurant-cuisine');
   cuisine.innerHTML = restaurant.cuisine_type;
