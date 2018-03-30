@@ -138,11 +138,19 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
 createRestaurantHTML = (restaurant) => {
   const li = document.createElement('li');
 
+  const picture = document.createElement('picture');
+  li.append(picture);
+
+  const source = document.createElement('source');
+  source.media = '(min-width: 1200px)';
+  source.srcset = '/img/' + restaurant.id + '-800.jpg';
+  picture.append(source);
+
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   image.alt = restaurant.name + " Restaurant";
-  li.append(image);
+  picture.append(image);
 
   const name = document.createElement('h1');
   name.innerHTML = restaurant.name;
@@ -180,12 +188,12 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   });
 }
 
-if ('serviceWorker' in navigator){
-  navigator.serviceWorker.register('./sw.js', { scope: './' })
-  .then(function(registration){
-    console.log("[ServiceWorker] Registered");
-  })
-  .catch(function(err) {
-    console.log("[ServiceWorker] Failed to Register", err);
-  });
-}
+// if ('serviceWorker' in navigator){
+//   navigator.serviceWorker.register('./sw.js', { scope: './' })
+//   .then(function(registration){
+//     console.log("[ServiceWorker] Registered");
+//   })
+//   .catch(function(err) {
+//     console.log("[ServiceWorker] Failed to Register", err);
+//   });
+// }
