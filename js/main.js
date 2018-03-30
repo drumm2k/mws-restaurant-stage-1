@@ -151,12 +151,10 @@ createRestaurantHTML = (restaurant) => {
 
   const neighborhood = document.createElement('p');
   neighborhood.innerHTML = restaurant.neighborhood;
-  neighborhood.tabIndex = "0";
   li.append(neighborhood);
 
   const address = document.createElement('p');
   address.innerHTML = restaurant.address;
-  address.tabIndex = "0";
   li.append(address);
 
   const more = document.createElement('a');
