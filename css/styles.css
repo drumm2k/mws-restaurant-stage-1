@@ -56,6 +56,8 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   padding: 25px;
   text-align: center;
   text-transform: uppercase;
+  position: relative;
+  z-index: 12;
 }
 /* ====================== Navigation ====================== */
 nav {
@@ -82,13 +84,12 @@ nav h1 a {
 }
 
 #breadcrumb {
-    padding: 10px 40px 16px;
+    padding: 10px 40px;
     list-style: none;
     background-color: #eee;
     font-size: 17px;
     margin: 0;
     width: 100%;
-    /* width: calc(50% - 80px); */
 }
 
 /* Display list items side by side */
@@ -215,14 +216,15 @@ nav h1 a {
   position: fixed;
   top: 0;
   width: 100vw;
-  z-index: 1000;
+  z-index: 10;
 }
 
 .inside #map-container {
   background: blue none repeat scroll 0 0;
-  margin-top: 130px;
+  margin-top: 125px;
   height: 300px;
   width: 100%;
+  z-index: 11;
 }
 
 .inside #map {
@@ -348,13 +350,28 @@ nav h1 a {
     padding-right: 35px;
   }
 
-  #reviews-list {
-    flex-direction: row;
-    justify-content: space-between;
+  .inside #maincontent {
+    width: 60%;
   }
 
-  #reviews-list li {
-    width: calc((100% - 110px)/2);
+  .inside #map-container {
+    width: 40%;
+    height: calc(100% - 80px);
+    position: fixed;
+    right: 0;
+    top: -45px;
+  }
+
+  #restaurant-container {
+    padding-top: 140px;
+  }
+
+  #breadcrumb {
+    width: calc(60% - 88px);
+  }
+
+  #reviews-list {
+    max-width: 800px;
   }
 }
 
@@ -371,5 +388,17 @@ nav h1 a {
 
   #restaurant-hours td:first-child {
     padding-right: 50px;
+  }
+
+  .inside #maincontent {
+    width: 50%;
+  }
+
+  .inside #map-container {
+    width: 50%;
+  }
+
+  #breadcrumb {
+    width: calc(50% - 88px);
   }
 }
