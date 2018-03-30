@@ -31,7 +31,7 @@ a:hover, a:focus {
 }
 
 a img{
-	border: none 0px #fff;
+  border: none 0px #fff;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -132,7 +132,7 @@ nav h1 a {
 
 .filter-options h2 {
   color: white;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: normal;
   line-height: 1;
   margin: 10px;
@@ -142,10 +142,10 @@ nav h1 a {
   background-color: white;
   border: 1px solid #fff;
   font-family: Arial,sans-serif;
-  font-size: 1rem;
+  font-size: 0.8rem;
   height: 35px;
   letter-spacing: 0;
-  width: 200px;
+  width: 170px;
   margin-bottom: 10px;
 }
 
@@ -153,6 +153,7 @@ nav h1 a {
 #restaurants-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   background-color: #f3f3f3;
   list-style: outside none none;
   margin: 0;
@@ -164,11 +165,12 @@ nav h1 a {
   background-color: #fff;
   border: 2px solid #ccc;
   font-family: Arial,sans-serif;
-  margin: 15px;
+  margin: 15px auto;
   min-height: 380px;
   padding: 20px;
   text-align: left;
   min-width: 220px;
+  max-width: 350px;
 }
 
 #restaurants-list .restaurant-img {
@@ -245,7 +247,8 @@ nav h1 a {
 }
 
 #restaurant-img {
-	width: 100%;
+  width: 100%;
+  max-width: 800px;
 }
 
 #restaurant-address {
@@ -263,6 +266,7 @@ nav h1 a {
   text-align: center;
   text-transform: uppercase;
   width: 100%;
+  max-width: 800px;
   margin-top: -7px;
 }
 
@@ -284,6 +288,9 @@ nav h1 a {
 }
 
 #reviews-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
 }
@@ -304,5 +311,65 @@ nav h1 a {
 
 #restaurant-hours td {
   color: #666;
-  width: 50%;
+}
+#restaurant-hours td:first-child {
+  padding-right: 20px;
+}
+
+/* ====================== Tablet Media ====================== */
+@media screen and (min-width: 768px) {
+  nav h1 a {
+    font-size: 0.8em;
+  }
+
+  .filter-options {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  
+  .filter-options h2 {
+    margin-right: 25px;
+    font-size: 1rem;
+  }
+  
+  .filter-options select {
+    margin: 0;
+    margin-right: 15px;
+    font-size: 1rem;
+  }
+
+  #restaurants-list li {
+    width: calc((100% - 148px)/2);
+    max-width: 450px;
+    margin: 15px;
+  }
+
+  #restaurant-hours td:first-child {
+    padding-right: 35px;
+  }
+
+  #reviews-list {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #reviews-list li {
+    width: calc((100% - 110px)/2);
+  }
+}
+
+/* ====================== Desktop Media ====================== */
+@media screen and (min-width: 1024px) {
+  nav h1 a {
+    font-size: 1em;
+  }
+
+  #restaurants-list li {
+    width: calc((100% - 222px)/3);
+    max-width: 550px;
+  }
+
+  #restaurant-hours td:first-child {
+    padding-right: 50px;
+  }
 }
