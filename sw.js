@@ -1,4 +1,4 @@
-let cacheName = 'rest-reviews-v1';
+let cacheName = 'rest-reviews-v2';
 let cacheFiles = [
   './',
   './index.html',
@@ -30,17 +30,17 @@ let cacheFiles = [
   './img/10-800.jpg'
 ];
 
-self.addEventListener('install', function(e){
+self.addEventListener('install', function(e) {
   e.waitUntil(
-    caches.open(cacheName).then(function(cache){
+    caches.open(cacheName).then(function(cache) {
       return cache.addAll(cacheFiles);
     })
   )
 })
 
-self.addEventListener('activate', function(e){
+self.addEventListener('activate', function(e) {
   e.waitUntil(
-    caches.keys().then(function(cacheNames){
+    caches.keys().then(function(cacheNames) {
       return Promise.all(cacheNames.map(function(currentCacheName){
         if (currentCacheName !== cacheName) {
           caches.delete(currentCacheName);
@@ -50,7 +50,7 @@ self.addEventListener('activate', function(e){
   )
 })
 
-self.addEventListener('fetch', function(e){
+self.addEventListener('fetch', function(e) {
   e.respondWith(
     caches.open(cacheName).then(cache => {
       return cache.match(e.request).then(response => {
@@ -61,7 +61,7 @@ self.addEventListener('fetch', function(e){
             return response;
           })
           .catch(function (err) {
-            console.log("[ServiceWorker] Error fetching and caching", err);
+            console.log("[SW] Error fetching", err);
           })
         );
       });
