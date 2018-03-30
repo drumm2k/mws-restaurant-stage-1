@@ -17,7 +17,17 @@ let cacheFiles = [
   './img/7.jpg',
   './img/8.jpg',
   './img/9.jpg',
-  './img/10.jpg'
+  './img/10.jpg',
+  './img/1-800.jpg',
+  './img/2-800.jpg',
+  './img/3-800.jpg',
+  './img/4-800.jpg',
+  './img/5-800.jpg',
+  './img/6-800.jpg',
+  './img/7-800.jpg',
+  './img/8-800.jpg',
+  './img/9-800.jpg',
+  './img/10-800.jpg'
 ];
 
 self.addEventListener('install', function(e){
